@@ -82,7 +82,10 @@ export default function Home()  {
            Login</button>
           <button type="button" className="relative -ml-px inline-flex items-center border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
             <a className="flex items-center" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwritemyprd.com&amp;text=Use%20GPT-3%20to%20generate%20your%20PRD%20in%20seconds%20made%20by%20folks%20at%20%40olvyhq%20and%20%40TheProductfolks" target="_blank">
-               Tweet </a>
+              <svg viewBox="0 0 20 20" aria-hidden="true" className="h-4 w-4 mr-2" fill="currentColor">
+                <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0 0 20 3.92a8.19 8.19 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.996 4.107 4.107 0 0 0-6.993 3.743 11.65 11.65 0 0 1-8.457-4.287 4.106 4.106 0 0 0 1.27 5.477A4.073 4.073 0 0 1 .8 7.713v.052a4.105 4.105 0 0 0 3.292 4.022 4.095 4.095 0 0 1-1.853.07 4.108 4.108 0 0 0 3.834 2.85A8.233 8.233 0 0 1 0 16.407a11.615 11.615 0 0 0 6.29 1.84">
+                  </path>
+                  </svg> Tweet </a>
                   </button>
                   <button type="button" className="relative -ml-px inline-flex rounded-r-md items-center border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 ">
                     <a className="flex items-center" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fwritemyprd.com&amp;title=Use%20GPT-3%20to%20generate%20your%20PRD%20in%20seconds%20made%20by%20folks%20at%20%40olvyhq%20and%20%40theproductfolks" target="_blank"> Share </a>
@@ -174,7 +177,7 @@ You will need to read over and edit! Don't be lazy </p></div></div></div>
                     <div className="absolute inset-0 bg-gradient-to-b from-amber-100 to-white pointer-events-none -z-10" aria-hidden="true">
                     </div>
                     <div className="hidden md:block absolute right-0 pointer-events-none -z-10" aria-hidden="true">
-                       
+                        <img src="/assets/auth-illustration.0d3f5ab0.svg" className="max-w-none" width="1440" height="900" alt="Page Illustration"/>
                     </div>
                     <div className="h-auto">
                         <div className=" p-6 pb-0 h-[calc(100vh-6rem)]">
