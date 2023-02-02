@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import { useState } from 'react';
-// import Typewriter from 'typewriter-effect';
+import Typewriter from 'typewriter-effect';
 
 // import ReactDOM from 'react-dom';
 // import Typed from "react-typed";
@@ -15,9 +15,6 @@ import styles from './index.module.css';
 
 
 export default function Home()  {
-  
-  const message = ["Medium blogs are awesome!"] 
-
   const [name, setName] = useState('man');
   const [job_title, setJob_title] = useState("");
   const [experience, setExperience] = useState("");
@@ -68,7 +65,7 @@ export default function Home()  {
         <title>OpenAI Quickstart</title>
         <link rel="icon" href="/dog.png" />
       </Head>
-
+      <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 
       <main className={styles.main}>
      <div className="min-h-screen w-full lg:w-1/2 relative">
@@ -187,18 +184,16 @@ You will need to read over and edit! Don't be lazy </p></div></div></div>
                             <div className="form-textarea  bg-white relative text-base w-full p-4 px-8 overflow-scroll h-[calc(100%-1rem)] shadow-2xl flex items-center justify-center">
                                 <div className=" font-mono text-left text-base font-semibold absolute top-4 left-4">
                                 {what && (
-                                  <p id="message">Hi! I m CHAT-GPT3 - here to make your cover letter stand out from the rest.Tell us your experience and the job requirements.</p>
-                                    // <div className={styles.load}>
-                                      
-                                    //   <Typewriter
-                                    //   options={{
-                                    //     strings: [' Hi!</br>I m CHAT-GPT3 - here to make your cover letter stand out from the rest.Tell us your experience and the job requirements.'],
-                                    //     autoStart: true,
-                                    //     loop: true,
-                                    //   }}
-                                    // />
+                                    <div className={styles.load}>
+                                      <Typewriter
+                                      options={{
+                                        strings: [' Hi!</br>I m CHAT-GPT3 - here to make your cover letter stand out from the rest.Tell us your experience and the job requirements.'],
+                                        autoStart: true,
+                                        loop: true,
+                                      }}
+                                    />
                                   
-                                    // </div>
+                                    </div>
                                     
                                     )}
 
@@ -218,10 +213,10 @@ You will need to read over and edit! Don't be lazy </p></div></div></div>
       /> */}
       </div>
         )}
-        <div className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
->
+        <div>
         <div type="text" onChange={(e)=>seResult(e.target.result.replaceAll('\n', '<br/>'))} 
-          className={styles.result}
+        className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
+          classNam={styles.result}
           dangerouslySetInnerHTML={{ __html: result }}
         />
 

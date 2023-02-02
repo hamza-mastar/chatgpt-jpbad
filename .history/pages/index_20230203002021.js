@@ -218,9 +218,9 @@ You will need to read over and edit! Don't be lazy </p></div></div></div>
       /> */}
       </div>
         )}
-        <div className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
->
+        <div>
         <div type="text" onChange={(e)=>seResult(e.target.result.replaceAll('\n', '<br/>'))} 
+        className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
           className={styles.result}
           dangerouslySetInnerHTML={{ __html: result }}
         />

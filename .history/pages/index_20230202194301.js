@@ -16,7 +16,7 @@ import styles from './index.module.css';
 
 export default function Home()  {
   
-  const message = ["Medium blogs are awesome!"] 
+
 
   const [name, setName] = useState('man');
   const [job_title, setJob_title] = useState("");
@@ -54,7 +54,62 @@ export default function Home()  {
     setWhat(false);
     
   }
+  var typeWriterElement = document.getElementById('typewriter');
 
+  // The TextArray: 
+  var textArray = ["Hey, I'm Tim. Hey, I'm Tim.Hey, I'm Tim.Hey, I'm Tim.Hey, I'm Tim.Hey, I'm Tim.Hey, I'm Tim.Hey, I'm Tim.Hey, I'm Tim.Hey, I'm Tim.Hey, I'm Tim.Hey, I'm Tim.","I like JavaScript.","I Love to Develop.", "I like this Typewriter."];
+  
+  // You can also do this by transfering it through a data-attribute
+  // var textArray = typeWriterElement.getAttribute('data-array');
+  
+  
+  // function to generate the backspace effect 
+  function delWriter(text, i, cb) {
+    if (i >= 0 ) {
+      typeWriterElement.innerHTML = text.substring(0, i--);
+      // generate a random Number to emulate backspace hitting.
+       var rndBack = 10 + Math.random() * 100;
+      setTimeout(function() {
+        delWriter(text, i, cb);
+      },rndBack); 
+    } else if (typeof cb == 'function') {
+      setTimeout(cb,1000);
+    }
+  };
+  
+  // function to generate the keyhitting effect
+  function typeWriter(text, i, cb) {
+    if ( i < text.length+1 ) {
+      typeWriterElement.innerHTML = text.substring(0, i++);
+      // generate a random Number to emulate Typing on the Keyboard.
+      var rndTyping = 250 - Math.random() * 100;
+      setTimeout( function () { 
+        typeWriter(text, i++, cb)
+      },rndTyping);
+    } else if (i === text.length+1) {
+      setTimeout( function () {
+        delWriter(text, i, cb)
+      },1000);
+    }
+  };
+  
+  // the main writer function
+  function StartWriter(i) {
+    if (typeof textArray[i] == "undefined") {
+      setTimeout( function () {
+        StartWriter(0)
+      },1000);
+    } else if(i < textArray[i].length+1) {
+      typeWriter(textArray[i], 0, function () {
+        StartWriter(i+1);
+      });
+    }  
+  };
+  // wait one second then start the typewriter
+  setTimeout( function () {
+    StartWriter(0);
+  },1000);
+    
 
   return (
     <>
@@ -218,10 +273,10 @@ You will need to read over and edit! Don't be lazy </p></div></div></div>
       /> */}
       </div>
         )}
-        <div className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
->
+        <div>
         <div type="text" onChange={(e)=>seResult(e.target.result.replaceAll('\n', '<br/>'))} 
-          className={styles.result}
+        className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
+          classNam={styles.result}
           dangerouslySetInnerHTML={{ __html: result }}
         />
 

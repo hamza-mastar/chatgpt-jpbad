@@ -15,8 +15,12 @@ import styles from './index.module.css';
 
 
 export default function Home()  {
+  function typewriter() {
+    document.querySelector("#message").innerHTML = message[0].substring(0, textPosition) + '<span>\u25AE</span>'
+   
+  }
   
-  const message = ["Medium blogs are awesome!"] 
+
 
   const [name, setName] = useState('man');
   const [job_title, setJob_title] = useState("");
@@ -218,10 +222,10 @@ You will need to read over and edit! Don't be lazy </p></div></div></div>
       /> */}
       </div>
         )}
-        <div className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
->
+        <div>
         <div type="text" onChange={(e)=>seResult(e.target.result.replaceAll('\n', '<br/>'))} 
-          className={styles.result}
+        className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
+          classNam={styles.result}
           dangerouslySetInnerHTML={{ __html: result }}
         />
 

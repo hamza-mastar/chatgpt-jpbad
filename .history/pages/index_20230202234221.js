@@ -16,7 +16,7 @@ import styles from './index.module.css';
 
 export default function Home()  {
   
-  const message = ["Medium blogs are awesome!"] 
+
 
   const [name, setName] = useState('man');
   const [job_title, setJob_title] = useState("");
@@ -54,7 +54,7 @@ export default function Home()  {
     setWhat(false);
     
   }
-
+  
 
   return (
     <>
@@ -134,7 +134,12 @@ You will need to read over and edit! Don't be lazy </p></div></div></div>
             value={job_title}
             onChange={(e) => setJob_title(e.target.value)}
           />
-
+<div class="wrapper">
+	<div class="centeredBox"> 
+		<span id="typewriter" data-array=""></span>
+		<span class="cursor"></span>
+	</div>
+</div>
           <label>Experience </label>
           <textarea className="form-textarea outline-none focus:outline-none text-lg bg-white rounded-md px-4 py-2 w-full border  focus:border-gray-400 border-gray-300 font-regular mt-2 transition-all undefined " rows="4"
           required
@@ -218,10 +223,10 @@ You will need to read over and edit! Don't be lazy </p></div></div></div>
       /> */}
       </div>
         )}
-        <div className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
->
+        <div>
         <div type="text" onChange={(e)=>seResult(e.target.result.replaceAll('\n', '<br/>'))} 
-          className={styles.result}
+        className="whitespace-pre-wrap text-gray-800 bg-white h-auto text-lg divide-y px-4 pt-5 pb-4 sm:p-6 sm:pb-4 "
+          classNam={styles.result}
           dangerouslySetInnerHTML={{ __html: result }}
         />
 
@@ -243,6 +248,7 @@ You will need to read over and edit! Don't be lazy </p></div></div></div>
   </CopyToClipboard> */}
   <button className="p-4 grow w-auto h-16 rounded-lg flex items-center justify-center bg-gray-50 border border-gray-300 text-gray-600 hover:bg-gray-100 shadow-lg text-xs sm:text-base"> Copy and Open Slack </button>
   
+
         </div>
         </div>
         
